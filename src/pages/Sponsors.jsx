@@ -6,7 +6,7 @@ const Sponsors = () => {
       <h1 className="text-4xl font-bold mb-8">Our Sponsors</h1>
       <div className="prose max-w-none">
         <p className="text-lg mb-6">
-          Meet the organizations making TechConf 2024 possible.
+          Meet the organizations making NCICIS 2025 possible.
         </p>
         {/* Content will be expanded later */}
       </div>

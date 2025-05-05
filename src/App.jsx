@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -15,6 +16,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
+    <>
     <Router>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -35,6 +37,9 @@ function App() {
         <Footer />
       </div>
     </Router>
+    <Analytics />
+
+    </>
   );
 }
 

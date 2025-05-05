@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Conference Info */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-white">
-              <span className="text-blue-400">Tech</span>Conf 2024
+              <span className="text-blue-400">  NCICIS </span>2025
             </h3>
             <p className="text-gray-400 leading-relaxed">
               Kerala's premier technology conference showcasing innovation and digital transformation in God's Own Country.
@@ -102,7 +102,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} TechConf Kerala. All rights reserved.
+            © {new Date().getFullYear()} NCICIS Kerala. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy" className="text-gray-500 hover:text-white text-sm transition-colors">

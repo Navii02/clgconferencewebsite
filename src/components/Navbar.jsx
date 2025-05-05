@@ -31,7 +31,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               <span className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
-                TechConf 2024
+              NCICIS 2025
               </span>
             </Link>
           </div>
