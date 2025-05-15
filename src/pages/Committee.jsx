@@ -66,35 +66,35 @@ const committeeMembers = [
 
 const Committee = () => {
   return (
-    <div className="bg-gray-50 py-20">
+    <div className="bg-gray-50 py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-center mb-4 text-gray-800">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">
           Organizing Committee
         </h1>
-        <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto text-lg">
+        <p className="text-center text-gray-500 mb-8 sm:mb-12 max-w-2xl mx-auto text-base sm:text-lg">
           Meet the passionate professionals working behind the scenes to make TechConf 2024 a resounding success.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
           {committeeMembers.map((member, index) => (
             <div
               key={index}
               className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
             >
-              <div className="flex flex-col items-center px-6 py-8 text-center">
+              <div className="flex flex-col items-center px-4 sm:px-6 py-6 sm:py-8 text-center">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-indigo-100"
+                  className="w-24 sm:w-28 h-24 sm:h-28 rounded-full object-cover mb-3 sm:mb-4 border-4 border-indigo-100"
                 />
-                <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
-                <p className="text-sm text-gray-500">{member.profession}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-800">{member.name}</h3>
+                <p className="text-xs sm:text-sm text-gray-500">{member.profession}</p>
                 <span className="mt-2 inline-block text-xs px-3 py-1 bg-indigo-50 text-indigo-700 font-medium rounded-full">
                   {member.designation}
                 </span>
-                <p className="mt-4 text-sm text-gray-600">{member.description}</p>
+                <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-600">{member.description}</p>
 
-                <div className="flex space-x-4 mt-6 text-indigo-600">
+                <div className="flex space-x-3 sm:space-x-4 mt-4 sm:mt-6 text-indigo-600">
                   <a
                     href={member.linkedin}
                     target="_blank"
@@ -102,14 +102,14 @@ const Committee = () => {
                     className="hover:text-indigo-800"
                     aria-label="LinkedIn"
                   >
-                    <FaLinkedin className="w-5 h-5" />
+                    <FaLinkedin className="w-4 sm:w-5 h-4 sm:h-5" />
                   </a>
                   <a
                     href={member.email}
                     className="hover:text-indigo-800"
                     aria-label="Email"
                   >
-                    <FaEnvelope className="w-5 h-5" />
+                    <FaEnvelope className="w-4 sm:w-5 h-4 sm:h-5" />
                   </a>
                 </div>
               </div>

@@ -109,7 +109,7 @@ const Footer = () => {
             </ul>
           </div>
 
-         
+        
         </div>
 
         {/* Copyright */}
@@ -128,6 +128,17 @@ const Footer = () => {
               Cookie Policy
             </Link>
           </div>
+        </div>
+      </div>
+
+      {/* Microsoft CMT Acknowledgement */}
+      <div className="bg-gray-800 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-gray-400 text-xs md:text-sm">
+            The Microsoft CMT service was used for managing the peer-reviewing process for this conference. 
+            This service was provided for free by Microsoft and they bore all expenses, including costs for 
+            Azure cloud services as well as for software development and support.
+          </p>
         </div>
       </div>
     </footer>
