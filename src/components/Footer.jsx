@@ -1,34 +1,65 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
-import { Twitter, Facebook, Instagram, Linkedin,ChevronRight  } from 'lucide-react';
+import { Mail, Phone, MapPin, Twitter, Facebook, Instagram, Linkedin, ChevronRight } from 'lucide-react';
 
 const Footer = () => {
+  const quickLinks = [
+    { name: 'About Conference', path: '/about' },
+    { name: 'Call for Papers', path: '/call-for-papers' },
+    { name: 'Committee', path: '/committee' },
+    { name: 'Speakers', path: '/speakers' },
+    { name: 'Schedule', path: '/schedule' },
+    { name: 'Venue', path: '/venue' },
+  ];
+
+  const contactInfo = [
+    {
+      icon: <Mail className="w-5 h-5 text-blue-400" />,
+      title: 'Email',
+      content: 'info@ncicis2025.org',
+      href: 'mailto:info@ncicis2025.org'
+    },
+    {
+      icon: <Phone className="w-5 h-5 text-blue-400" />,
+      title: 'Phone',
+      content: '+91 98765 43210',
+      href: 'tel:+919876543210'
+    },
+    {
+      icon: <MapPin className="w-5 h-5 text-blue-400" />,
+      title: 'Location',
+      content: 'College of Engineering Poonjar, Poonjar, Kottayam, Kerala 686582'
+    }
+  ];
+
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Conference Info */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white">
-              <span className="text-blue-400">  NCICIS </span>2025
+          <div className="space-y-5">
+            <h3 className="text-xl font-bold text-white">
+              <span className="text-blue-400">NCICIS </span>2025
             </h3>
-            <p className="text-gray-400 leading-relaxed">
-              Kerala's premier technology conference showcasing innovation and digital transformation in God's Own Country.
+            <p className="text-gray-400 text-sm leading-relaxed">
+              National Conference on Information Communication & Intelligent Systems, organized by IETE and College of Engineering Poonjar.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Linkedin size={20} />
-              </a>
+              {[
+                { href: '#', icon: <Twitter className="w-5 h-5" />, label: 'Twitter' },
+                { href: '#', icon: <Facebook className="w-5 h-5" />, label: 'Facebook' },
+                { href: '#', icon: <Instagram className="w-5 h-5" />, label: 'Instagram' },
+                { href: '#', icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn' },
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  aria-label={social.label}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -38,20 +69,14 @@ const Footer = () => {
               Quick Links
             </h4>
             <ul className="space-y-3">
-              {[
-                { name: 'About', path: '/about' },
-                { name: 'Speakers', path: '/speakers' },
-                { name: 'Schedule', path: '/schedule' },
-                { name: 'Venue', path: '/venue' },
-                { name: 'Sponsors', path: '/sponsors' },
-              ].map((item) => (
+              {quickLinks.map((item) => (
                 <li key={item.name}>
-                  <Link 
-                    to={item.path} 
-                    className="text-gray-400 hover:text-blue-400 transition-colors flex items-start"
+                  <Link
+                    to={item.path}
+                    className="text-gray-400 hover:text-blue-400 transition-colors flex items-start group"
                   >
-                    <ChevronRight size={16} className="mt-1 mr-1 flex-shrink-0" />
-                    {item.name}
+                    <ChevronRight className="w-4 h-4 mt-1 mr-2 text-blue-400 group-hover:translate-x-1 transition-transform" />
+                    <span>{item.name}</span>
                   </Link>
                 </li>
               ))}
@@ -64,54 +89,42 @@ const Footer = () => {
               Contact Us
             </h4>
             <ul className="space-y-4">
-              <li className="flex items-start">
-                <Mail size={18} className="text-blue-400 mt-1 mr-3 flex-shrink-0" />
-                <div>
-                  <p className="text-gray-400">Email</p>
-                  <a href="mailto:info@techconfkerala.com" className="text-white hover:text-blue-400 transition-colors">
-                    info@techconfkerala.com
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <Phone size={18} className="text-blue-400 mt-1 mr-3 flex-shrink-0" />
-                <div>
-                  <p className="text-gray-400">Phone</p>
-                  <a href="tel:+919876543210" className="text-white hover:text-blue-400 transition-colors">
-                    +91 98765 43210
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <MapPin size={18} className="text-blue-400 mt-1 mr-3 flex-shrink-0" />
-                <div>
-                  <p className="text-gray-400">Location</p>
-                  <p className="text-white">
-                    Grand Hyatt Kochi Bolgatty<br />
-                    Kochi, Kerala 682504
-                  </p>
-                </div>
-              </li>
+              {contactInfo.map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <div className="flex-shrink-0 mt-1 mr-3">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">{item.title}</p>
+                    {item.href ? (
+                      <a href={item.href} className="text-white hover:text-blue-400 transition-colors text-sm">
+                        {item.content}
+                      </a>
+                    ) : (
+                      <p className="text-white text-sm">{item.content}</p>
+                    )}
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Newsletter */}
          
         </div>
 
         {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} NCICIS Kerala. All rights reserved.
+        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm">
+          <p className="text-gray-500 mb-4 md:mb-0">
+            © {new Date().getFullYear()} NCICIS. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-gray-500 hover:text-white text-sm transition-colors">
+          <div className="flex space-x-6">
+            <Link to="/privacy" className="text-gray-500 hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-gray-500 hover:text-white text-sm transition-colors">
+            <Link to="/terms" className="text-gray-500 hover:text-white transition-colors">
               Terms of Service
             </Link>
-            <Link to="/cookies" className="text-gray-500 hover:text-white text-sm transition-colors">
+            <Link to="/cookies" className="text-gray-500 hover:text-white transition-colors">
               Cookie Policy
             </Link>
           </div>
